@@ -2,8 +2,8 @@ const fs = require('fs')
 const colors = require('colors')
 const prompt = require('prompt')
 const {exec} = require('child_process')
-// const art = require('ascii-art')
 
+// const configs = ['config', 'config_', 'config_2', 'config_3', 'config_4']
 const configs = ['config', 'config_']
 const appdata = process.env.APPDATA + '\\.vimeworld\\'
 
