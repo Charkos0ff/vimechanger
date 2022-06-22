@@ -23,12 +23,13 @@ async function rename(number) {
             second = configs[0]
         }
 
-        await fs.renameSync(appdata + second, 'C:\\Users\\root\\AppData\\Roaming\\.vimeworld\\config__')
-        await fs.renameSync(appdata + configs[number - 1], 'C:\\Users\\root\\AppData\\Roaming\\.vimeworld\\config')
-        await fs.renameSync(appdata + 'config__', 'C:\\Users\\root\\AppData\\Roaming\\.vimeworld\\config_')
+        await fs.renameSync(appdata + second, appdata + 'config__')
+        await fs.renameSync(appdata + configs[number - 1], appdata + 'config')
+        await fs.renameSync(appdata + 'config__', appdata + 'config_')
 
         return true;
     } catch (e) {
+        console.error(e)
         return false;
     }
 }
@@ -91,7 +92,7 @@ async function start() {
             console.log('Запуск сломафся'.red)
         }
     } else {
-        console.log('Переименование конфига сломалось, может быть VimeWorld уже запущен?'.red)
+        console.log('Переименование конфига сломалось. Может быть, VimeWorld уже запущен?'.red)
     }
 }
 
