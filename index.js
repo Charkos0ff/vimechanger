@@ -78,7 +78,7 @@ function sendFinalMessage(message) {
         }
     }))['account']
 
-    if (selected < 1 || selected > 2) sendFinalMessage('Можно иметь одновременно лишь два аккаунта. Нарушаем?'.red)
+    if (selected < 1 || selected > configs.length) sendFinalMessage('Можно иметь одновременно лишь два аккаунта. Нарушаем?'.red)
 
 
     if (await rename(selected)) {
